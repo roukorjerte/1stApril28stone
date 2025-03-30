@@ -1,0 +1,36 @@
+/* Leaderboard.module.css */
+.leaderboardContainer {
+  padding: 100px 200px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th, .td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.th {
+  background-color: #f4f4f4;
+}
+
+.td img {
+  width: 30px;
+  height: 30px;
+}
+
+.gold {
+  fill: gold;
+}
+
+.silver {
+  fill: silver;
+}
+
+.bronze {
+  fill: #cd7f32;
+}

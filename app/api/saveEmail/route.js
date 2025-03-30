@@ -4,56 +4,48 @@ import path from "path";
 const filePath = path.join(process.cwd(), "public", "emails.json");
 
 export async function POST(req) {
-    try {
-        const { email, level } = await req.json();
-        if (!email) {
-            return new Response(JSON.stringify({ error: "Email обязателен" }), { status: 400 });
-        }
-
-        // Читаем текущий файл
-        let data = [];
-        try {
-            const fileData = await fs.readFile(filePath, "utf8");
-            data = JSON.parse(fileData);
-        } catch (error) {
-            console.log("Файл emails.json отсутствует или пуст, создаём новый.");
-        }
-
-        // Находим запись для данного email
-        const userIndex = data.findIndex((user) => user.email === email);
-
-        if (userIndex >= 0) {
-            // Если пользователь уже существует, обновляем его данные
-            const existingUser = data[userIndex];
-
-            // Обновляем уровень
-            existingUser.level = level;
-
-            // Если достигнут уровень 15, добавляем или обновляем timestamp
-            if (existingUser.level === 5 && !existingUser.timestamp) {
-                existingUser.timestamp = new Date().toISOString();
-            }
-
-            // Обновляем запись в массиве
-            data[userIndex] = existingUser;
-        } else {
-            // Если пользователя нет в базе, добавляем новый
-            const newUser = { email, level };
-
-            // Если уровень сразу 15, добавляем timestamp
-            if (level === 5) {
-                newUser.timestamp = new Date().toISOString();
-            }
-
-            data.push(newUser);
-        }
-
-        // Записываем обновлённый массив данных обратно в JSON
-        await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf8");
-
-        return new Response(JSON.stringify({ message: "Email сохранён" }), { status: 200 });
-    } catch (error) {
-        console.error("Ошибка при сохранении email:", error);
-        return new Response(JSON.stringify({ error: "Ошибка сервера" }), { status: 500 });
+  try {
+    const { email, level } = await req.json();
+    if (!email) {
+      return new Response(JSON.stringify({ error: "Email обязателен" }), { status: 400 });
     }
+
+    const [firstName, lastName] = email.split('@')[0].split('.');
+
+    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    const formattedFirstName = capitalize(firstName);
+    const formattedLastName = capitalize(lastName);
+
+    let data = [];
+    try {
+      const fileData = await fs.readFile(filePath, "utf8");
+      data = JSON.parse(fileData);
+    } catch (error) {
+      console.log("Файл emails.json отсутствует или пуст, создаём новый.");
+    }
+
+    const userIndex = data.findIndex((user) => user.firstName === formattedFirstName && user.lastName === formattedLastName);
+
+    if (userIndex >= 0) {
+      const existingUser = data[userIndex];
+      existingUser.level = level;
+      if (existingUser.level === 20 && !existingUser.timestamp) {
+        existingUser.timestamp = new Date().toISOString();
+      }
+      data[userIndex] = existingUser;
+    } else {
+      const newUser = { firstName: formattedFirstName, lastName: formattedLastName, level };
+      if (level === 20) {
+        newUser.timestamp = new Date().toISOString();
+      }
+      data.push(newUser);
+    }
+
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf8");
+
+    return new Response(JSON.stringify({ message: "Email сохранён" }), { status: 200 });
+  } catch (error) {
+    console.error("Ошибка при сохранении email:", error);
+    return new Response(JSON.stringify({ error: "Ошибка сервера" }), { status: 500 });
+  }
 }
