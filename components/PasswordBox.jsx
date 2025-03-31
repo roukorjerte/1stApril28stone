@@ -48,7 +48,7 @@ function PasswordBox(props, ref) {
     return ( 
         <>
             <div className="pswdbox_label">
-                Выберите пароль
+                Выберите пароль (Латиницей)
                 <span className="psswd_len">
                     {pswd.length}
                 </span>
@@ -67,7 +67,6 @@ function PasswordBox(props, ref) {
                 spellCheck="false"
                 placeholder="Password"
             />
-            {/* <div>{caretPos.current && `${caretPos.current.start}, ${caretPos.current.end}`}</div> */}
         </>
     );
 }

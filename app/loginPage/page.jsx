@@ -72,9 +72,11 @@ export default function Home() {
                     <div className={styles.title}>
                         <Image
                             src="/jeka.png"
+                            layout="intrinsic"
                             width={312}
                             height={118}
                             alt="logo"
+                            className="responsive-logo"
                         />
                     </div>
 

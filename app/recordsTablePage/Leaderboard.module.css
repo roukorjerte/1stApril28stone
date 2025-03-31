@@ -1,6 +1,5 @@
 .container{
   width: 576px;
-  max-width: calc(100%);
   margin: 0 auto;
   padding: 10px;
   min-height: calc(100vh - 10px);
@@ -16,11 +15,24 @@
   box-shadow: rgba(56, 49, 47, 0.03) 1px 1px 0px 2px;
 }
 
+
 .h3{
   margin-bottom: 30px;
   font-size: 48px;
   font-weight: 800;
   margin: 10px 0px 30px 0px;
+}
+
+@media (max-width: 608px) {
+  .white_container { 
+    padding: 30px 30px 60px 30px;
+  }
+  .container{
+    width: 95% !important;
+  }
+  .h3{
+    font-size: 36px !important;
+  }
 }
 
 .level_container{

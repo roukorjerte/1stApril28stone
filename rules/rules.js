@@ -38,7 +38,7 @@ var rules = [
     new RuleSum(),
     new Rule( 
         "Ваш пароль должен содержать Никнейм одного из админов.",
-        (t) => /(?:Thomas)|(?:Francklin)|(?:Andrejs)|(?:Tom)|(?:Frank)/i.test(t)
+        (t) => /(?:potra3)|(?:dndhost)|(?:daeruss)|(?:larsulrih)|(?:kireto101)|(?:vatrox)/i.test(t)
     ),
     new Rule( 
         "Ваш пароль должен содержать название одного из континентов на английском.",
