@@ -1,26 +1,59 @@
-/* Leaderboard.module.css */
-.leaderboardContainer {
-  padding: 100px 200px;
+.container{
+  width: 576px;
+  max-width: calc(100%);
+  margin: 0 auto;
+  padding: 10px;
+  min-height: calc(100vh - 10px);
+}
+
+.white_container{
+  background-color: rgb(255, 255, 255);
+  padding: 30px 60px 60px 60px;
+  border-radius: 16px;
+  border-color: rgb(228, 227, 224);
+  border-width: 1px;
+  margin-top: 80px;
+  box-shadow: rgba(56, 49, 47, 0.03) 1px 1px 0px 2px;
+}
+
+.h3{
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 800;
+  margin: 10px 0px 30px 0px;
+}
+
+.level_container{
+  background-color: #BA5600;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  line-height: 22px;
+  font-weight: 600;
+  color: white;
 }
 
 .table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.number{
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+  width: 45px;
 }
 
 .th, .td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #ddd;
 }
 
-.th {
-  background-color: #f4f4f4;
-}
-
-.td img {
-  width: 30px;
-  height: 30px;
+.trophy{
+  display: block;
+  overflow: visible;
 }
 
 .gold {

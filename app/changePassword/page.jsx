@@ -47,7 +47,7 @@ export default function Home(){
                     body: JSON.stringify({ email, level }),
                 });
             } catch (error) {
-                console.error("Ошибка при сохранении уровня:", error);
+                console.error("Error in level save:", error);
             }
         }
     
@@ -148,7 +148,12 @@ export default function Home(){
             <div ref={aaParent}>
                 {allSolved && <RuleBox 
                     heading={"Congratulations!"} 
-                    msg={"You have successfully created a password. \u{1F389}\u{1F389}"}
+                    msg={
+                        <>
+                            You have been pranked! Happy Fools Day! 🎉🎉 To see how you did visit 
+                            <a href="/recordsTablePage"> this page</a>.
+                        </>
+                    }
                     correct={true}
                 />}        
                 {ruleState.filter(r => r.unlocked).sort(sort_rules).map(r => {
