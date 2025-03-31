@@ -59,7 +59,7 @@ const hourToEmoji = {
 
 export default class RuleTimeEmoji extends Rule{
     constructor(){
-        super("Your password must contain the current time as emoji (nearest half hour).");
+        super("Ваш пароль должен содержать текущее время в виде эмодзи (с округлением до ближайшего получаса).");
         this.nearestHalfHour = getCurrentNearestHalfHour();
         this.currentTimeEmoji = hourToEmoji[this.nearestHalfHour];
         console.log(this.nearestHalfHour, this.currentTimeEmoji);

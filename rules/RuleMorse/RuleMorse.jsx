@@ -8,7 +8,7 @@ const morse = {
 
 export default class RuleMorse extends Rule{
     constructor(){
-        super("Your password must contain the Morse code of the first 3 english alphabets in your password. (Use . and -)");
+        super("Ваш пароль должен содержать азбуку Морзе для первых трёх английских букв в вашем пароле. (Используйте . и -)");
     }
 
     check(txt){

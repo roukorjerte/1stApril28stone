@@ -20,18 +20,13 @@
 }
 
 .title{
-    text-align: center;
+    text-align: left;
     display: grid;
-    align-items: center;
+    align-items: start;
     grid-template-columns: 60px 90px;
-    justify-content: center;
     margin-bottom: 40px;
 }
-.title_text{
-    font-size: 28px;
-    font-weight: bold;
-    color: #533ea5;
-}
+
 .introduction{
     text-align: center;
     font-size: 15px;
@@ -52,13 +47,13 @@
 }
 
 .gray_link:hover{
-    color: #BA5600;
+    color: #F0033A;
     text-decoration: underline;
     font-weight: 500;
 }
 
 .white_container{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(100, 90, 192);
     padding: 60px 130px;
     border-radius: 16px;
     border-color: rgb(228, 227, 224);
@@ -73,7 +68,7 @@
 }
 
 .logInBtn{
-    background-color: #BA5600;
+    background-color: #F0033A;
     box-shadow: 1px 1px 0 1px #38312f0a;
     box-sizing: border-box;
     display: inline-flex;
@@ -93,7 +88,7 @@
     cursor: pointer;
 }
 .logInBtn:hover {
-    background-color: #8c4100;
+    background-color: #aa0e33;
   }
 
 .pswdbox_label {
@@ -126,7 +121,7 @@
 
 
 .pswdbox:focus-within{
-    border: 2px solid #f2a766;
+    border: 2px solid #f53f69;
     outline:none;
 }
 

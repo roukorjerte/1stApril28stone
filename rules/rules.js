@@ -12,40 +12,40 @@ import RuleEarthquake from "./RuleEarthquake/RuleEarthquake";
 
 var rules = [
     new Rule( 
-        "Your password must be at least 6 characters.",
+        "Ваш пароль должен содержать не менее 6 символов.",
         (t) => t?.length >= 6
     ),
     new Rule( 
-        "Your password must include an uppercase and a lowercase letter.",
+        "Ваш пароль должен содержать как минимум одну заглавную и одну строчную букву.",
         (t) => (/[A-Z]/.test(t) && /[a-z]/.test(t))
     ),
     new Rule( 
-        "Your password must include a special character.",
+        "Ваш пароль должен содержать специальный символ.",
         (t) => /\W/.test(t)
     ),
     new Rule( 
-        "Your password must include a negative number.",
+        "Ваш пароль должен содержать отрицательное число.",
         (t) => /-\d/.test(t)
     ),
     new Rule( 
-        "Your password must contain all the english vowels.",
+        "Ваш пароль должен содержать все английские гласные.",
         (t) => /a/i.test(t) && /e/i.test(t) && /i/i.test(t) && /o/i.test(t) && /u/i.test(t)
     ),
     new Rule(
-        "Your password must include 2-digit prime number.",
+        "Ваш пароль должен содержать двузначное простое число.",
         (t) => /(?:11)|(?:13)|(?:17)|(?:19)|(?:23)|(?:29)|(?:31)|(?:37)|(?:41)|(?:43)|(?:47)|(?:53)|(?:59)|(?:61)|(?:67)|(?:71)|(?:73)|(?:79)|(?:83)|(?:89)|(?:97)/.test(t)
     ),
     new RuleSum(),
     new Rule( 
-        "Your password must include the name of one of 28Stone founders.", //&#x1F9A0;
+        "Ваш пароль должен содержать Никнейм одного из админов.",
         (t) => /(?:Thomas)|(?:Francklin)|(?:Andrejs)|(?:Tom)|(?:Frank)/i.test(t)
     ),
     new Rule( 
-        "Your password must include the name of a continent.",
+        "Ваш пароль должен содержать название одного из континентов на английском.",
         (t) => /asia|europe|africa|australia|oceania|north america|south america|antarctica/i.test(t)
     ),
     new Rule( 
-        "Your password must contain the value of pi up to first 5 decimal places.",
+        "Ваш пароль должен содержать число пи с точностью до 5 знаков после запятой.",
         (t) => /(?:3\.14159)/.test(t)
     ),    
     
@@ -54,14 +54,14 @@ var rules = [
     new RuleQR(),
     new RuleMorse(),
     new RuleLocation(),
-    new RuleRiddle(),
+    // new RuleRiddle(),
     new Rule(
-        "Your password must have as many vowels as consonants.",
-        (t) => (t.match(/[aeiou]/ig) || []).length === (t.match(/[bcdfghjklmnpqrstvwxys]/ig) || []).length
+        "Ваш пароль должен содержать одинаковое количество гласных и согласных.",
+        (t) => (t.match(/[aeiou]/ig) || []).length === (t.match(/[bcdfghjklmnpqrstvwxyzs]/ig) || []).length
     ),
     new RuleSlidingPuzzle(),
     new Rule(
-        "Your password must include the length of your password.",
+        "Ваш пароль должен содержать количество символов в самом пароле.",
         (t) => {
             let l = t.length;
             let r = new RegExp(`${l}`);
@@ -69,6 +69,7 @@ var rules = [
         }
     )
 ];
+
 
 function sort_rules(a, b){
     if(a.correct == b.correct){

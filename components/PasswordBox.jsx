@@ -3,7 +3,6 @@ import React, {useRef, useEffect} from 'react';
 import "./PasswordBox.css";
 
 
-// https://www.vishalon.net/blog/javascript-getting-and-setting-caret-position-in-textarea
 function getCaretPosition(el){
     if(el.selectionStart || el.selectionStart == '0'){
         return {
@@ -32,7 +31,6 @@ function PasswordBox(props, ref) {
     const {pswd, setPswd} = props;
     const caretPos = useRef();
     
-    // https://saturncloud.io/blog/creating-a-textarea-with-autoresize/
     useEffect(() => {
         ref.current.style.height = 'auto';
         ref.current.style.height = `${ref.current.scrollHeight}px`;
@@ -50,7 +48,7 @@ function PasswordBox(props, ref) {
     return ( 
         <>
             <div className="pswdbox_label">
-                Choose a new password
+                Выберите пароль
                 <span className="psswd_len">
                     {pswd.length}
                 </span>

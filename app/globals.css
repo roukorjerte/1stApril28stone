@@ -1,22 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-    background-color: #fffaff;
+    background-image: url('/background.jpg');
     color: #0A0F0D;
     font-family: 'Roboto Mono', 'Consolas', monospace, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
-    
-    /* halftone */
-    /* https://css-irl.info/css-halftone-patterns/ */
-    --color: #fff0ff;
-    --dotSize: 0.25rem;
-    --bgSize: 1.35rem;
-    --bgPosition: calc(var(--bgSize) / 2);
-
-    background-image: linear-gradient(-180deg, #eee, #fbfbfb);
-    font-family: 'Inter', sans-serif;
+        font-family: 'Inter', sans-serif;
     
 }
 

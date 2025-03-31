@@ -20,7 +20,7 @@ async function getQR(word){
 
 export default class RuleQR extends Rule{
     constructor(){
-        super("Your password must contain the word you get when you scan this QR code.");
+        super("Ваш пароль должен содержать слово, которое вы получите при сканировании этого QR-кода.");
 
         this.word = getRandomWord();
         console.log("QR word:", this.word); 

@@ -18,7 +18,7 @@
     padding: 5px 16px 8px 8px;
 
     color: white;
-    background-color: rgb(174, 7, 24);
+    background-color: #5f0016;
     font-weight: bold;
     font-size: 15px;
 
@@ -30,11 +30,11 @@
 }
 
 .rulebox.rule-correct {
-    background-color: #deffce;
+    background-color: #ecfffd;
 
 }
 .rulebox-top.rule-correct {
-    background-color: #2e7918;
+    background-color: #017263;
     ;
     color: white;
 }

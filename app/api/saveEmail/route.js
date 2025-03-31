@@ -10,12 +10,6 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "Email обязателен" }), { status: 400 });
     }
 
-    const [firstName, lastName] = email.split('@')[0].split('.');
-
-    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    const formattedFirstName = capitalize(firstName);
-    const formattedLastName = capitalize(lastName);
-
     let data = [];
     try {
       const fileData = await fs.readFile(filePath, "utf8");
@@ -24,18 +18,18 @@ export async function POST(req) {
       console.log("Файл emails.json отсутствует или пуст, создаём новый.");
     }
 
-    const userIndex = data.findIndex((user) => user.firstName === formattedFirstName && user.lastName === formattedLastName);
+    const userIndex = data.findIndex((user) => user.email === email);
 
     if (userIndex >= 0) {
       const existingUser = data[userIndex];
       existingUser.level = level;
-      if (existingUser.level === 20 && !existingUser.timestamp) {
+      if (existingUser.level === 19 && !existingUser.timestamp) {
         existingUser.timestamp = new Date().toISOString();
       }
       data[userIndex] = existingUser;
     } else {
-      const newUser = { firstName: formattedFirstName, lastName: formattedLastName, level };
-      if (level === 20) {
+      const newUser = { email, level };
+      if (level === 19) {
         newUser.timestamp = new Date().toISOString();
       }
       data.push(newUser);

@@ -113,7 +113,7 @@ const locations = {
 
 export default class RuleLocation extends Rule{
     constructor(){
-        super("Your password must contain the name of the country at this latitude and longitude.");
+        super("Ваш пароль должен содержать название страны, находящейся по этим широте и долготе.");
         this.keys = Object.keys(locations);
         this.locationName = this.keys[Math.floor(Math.random()*this.keys.length)];
         console.log("Country:", this.locationName);

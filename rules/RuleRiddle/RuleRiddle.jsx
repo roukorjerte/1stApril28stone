@@ -5,11 +5,11 @@ import ReloadButton from '../../components/ReloadButton';
 
 
 const riddles = [
-    ["It's shorter than all the rest, when you're happy you raise it like it's the best.", "thumb"],
-    ["I look very sorry when you feel sad, and I love to look happy if you're feeling glad.", "mirror"],
-    ["I stand up tall and can be very grand. My secret isn't hidden, it's right at hand.", "piano"],
-    ["I can be all colours or no colour at all, sometimes I'm empty, and others I'm full.", "glass"],
-    ["You use me from your head to toe, the more I work, the smaller I grow.", "soap"],
+    ["У меня есть города, но нет домов. Есть леса, но нет деревьев. Есть реки, но нет воды. Кто я?", "a map"],
+    ["Я могу быть сломана, сделана, рассказана и сыграна. Кто я?", "a joke"],
+    ["Что полно дыр, но все равно что-то удерживает?", "a net"],
+    ["Я не живу, но расту; у меня нет легких, но я дышу. Кто я?", "fire"],
+    ["Что всегда впереди тебя, но ты не можешь этого увидеть?", "future"],,
     ["I'm found on people's faces, I'm something you wear, I help correct your eyesight and I come in a pair", "spectacles"],
     [" In the heat, you see me wrong. I bring you hope but am soon gone.", "mirrage"],
     ["Stare at me, and you may go blind. Yet, you cannot see if I don't shine.", "sun"],
@@ -38,7 +38,7 @@ const riddles = [
 
 export default class RuleRiddle extends Rule{
     constructor(){
-        super("Your password must contain the solution to the following riddle:");
+        super("Ваш пароль должен содержать решение следующей загадки:");
 
         this.riddleNum = Math.floor(Math.random()*riddles.length);
         console.log("Riddle:", riddles[this.riddleNum][1]);

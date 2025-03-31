@@ -20,18 +20,14 @@
 }
 
 .title{
-    text-align: center;
+    text-align: left;
     display: grid;
-    align-items: center;
+    align-items: start;
     grid-template-columns: 60px 90px;
-    justify-content: center;
     margin-bottom: 40px;
+    margin-left: 50px;
 }
-.title_text{
-    font-size: 28px;
-    font-weight: bold;
-    color: #533ea5;
-}
+
 .introduction{
     text-align: center;
     font-size: 15px;
@@ -52,13 +48,13 @@
 }
 
 .gray_link:hover{
-    color: #BA5600;
+    color: #F0033A;
     text-decoration: underline;
     font-weight: 500;
 }
 
 .white_container{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(100, 90, 192);
     padding: 60px;
     border-radius: 16px;
     border-color: rgb(228, 227, 224);
@@ -68,7 +64,7 @@
 }
 
 .level_container{
-    background-color: #BA5600;
+    background-color: #F0033A;
     box-shadow: 1px 1px 0 1px #38312f0a;
     box-sizing: border-box;
     display: inline-flex;
