@@ -10,7 +10,12 @@ const Leaderboard = () => {
     // Запрашиваем данные с API
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/recordsTable");
+        const response = await fetch("/api/recordsTable", {
+          method: "GET",
+          headers: {
+            "Authorization": "Bearer diana-dima-bonya-2024-AuGuSt"
+          }
+      });
         if (!response.ok) {
           throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
         }

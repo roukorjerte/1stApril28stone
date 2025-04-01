@@ -56,7 +56,10 @@ export default function Home() {
 
             const response = await fetch("/api/saveEmail", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json",
+                    "Authorization": "Bearer diana-dima-bonya-2024-AuGuSt"
+                 },
+                
                 body: JSON.stringify({ email, level: 0 })
             });
 
