@@ -19,5 +19,17 @@
   {
     "email": "арбуз",
     "level": 0
+  },
+  {
+    "email": "Alexa",
+    "level": 7
+  },
+  {
+    "email": "Zoo do",
+    "level": 3
+  },
+  {
+    "email": "   ",
+    "level": 0
   }
 ]

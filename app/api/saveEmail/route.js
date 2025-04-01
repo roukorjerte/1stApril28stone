@@ -3,8 +3,15 @@ import path from "path";
 
 const filePath = path.join(process.cwd(), "public", "emails.json");
 
+const API_KEY = "diana-dima-bonya-2024-AuGuSt";
+
 export async function POST(req) {
   try {
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader || authHeader !== `Bearer ${API_KEY}`) {
+      return new Response(JSON.stringify({ error: "Хватит ломать мой сайт!!!>_<" }), { status: 403 });
+    }
+
     const { email, level } = await req.json();
     if (!email) {
       return new Response(JSON.stringify({ error: "Email обязателен" }), { status: 400 });

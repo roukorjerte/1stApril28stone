@@ -67,6 +67,7 @@
 @media (max-width: 530px) {
     .white_container { 
         padding: 60px 30px;
+        margin-top: 180px;
     }
 
     .title {

@@ -43,6 +43,7 @@ export default function Home(){
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
+                        "Authorization": "Bearer diana-dima-bonya-2024-AuGuSt"
                     },
                     body: JSON.stringify({ email, level }),
                 });
